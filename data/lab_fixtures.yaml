@@ -1,0 +1,26 @@
+fixtures:
+  - id: luton-burnley
+    date: 03/10/2023
+    home: Luton
+    away: Burnley
+    type: relegation-scrap
+  - id: luton-tottenham
+    date: 07/10/2023
+    home: Luton
+    away: Tottenham
+    type: promoted-at-home
+  - id: crystal-palace-forest
+    date: 07/10/2023
+    home: Crystal Palace
+    away: Nott'm Forest
+    type: mid-table
+  - id: arsenal-man-city
+    date: 08/10/2023
+    home: Arsenal
+    away: Man City
+    type: big-six
+  - id: man-city-brighton
+    date: 21/10/2023
+    home: Man City
+    away: Brighton
+    type: heavy-favourite-at-home
