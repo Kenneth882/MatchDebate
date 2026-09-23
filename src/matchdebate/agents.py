@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 from importlib.resources import files
+from pathlib import Path
 
 import anthropic
 from dotenv import load_dotenv
@@ -25,25 +26,29 @@ READ_PACKET_TOOL = {
 }
 
 
-def _prompt(name: str) -> str:
+def read_prompt(name: str) -> str:
     return files("matchdebate.prompts").joinpath(name).read_text(encoding="utf-8")
 
 
-def _api_key() -> str:
+def api_key() -> str:
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not key:
         raise RuntimeError("ANTHROPIC_API_KEY is missing. Set it in .env.")
     return key
 
 
+def model_name() -> str:
+    return os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5-20250929")
+
+
 def run_advocate(role: str, packet: dict) -> str:
     if role not in {"home", "away"}:
         raise ValueError(f"role must be home or away, got {role!r}")
 
-    system = _prompt("shared.md") + "\n\n" + _prompt(f"{role}.md")
+    system = read_prompt("shared.md") + "\n\n" + read_prompt(f"{role}.md")
     packet_json = json.dumps(packet)
-    client = anthropic.Anthropic(api_key=_api_key())
-    model = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5-20250929")
+    client = anthropic.Anthropic(api_key=api_key())
+    model = model_name()
 
     messages: list[dict] = [
         {

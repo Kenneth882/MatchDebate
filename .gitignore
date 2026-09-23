@@ -219,3 +219,6 @@ __marimo__/
 
 # Lab answers (hidden from agents)
 data/sidecars/
+
+# Local backtest artifacts include results after an explicit reveal.
+data/runs/
