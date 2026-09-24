@@ -16,7 +16,7 @@ The current project is a historical backtest experiment. Its five selected fixtu
 | --- | --- | --- |
 | Agent 1 — Home Advocate | Argues that the home club wins, proposes a scoreline, and cites Match Packet fields. | Implemented |
 | Agent 2 — Away Advocate | Argues that the away club wins, proposes a scoreline, and cites the same Match Packet. | Implemented |
-| Agent 3 — Referee | Monitors a future rebuttal round and keeps both Advocates within the debate rules. | Planned |
+| Agent 3 — Referee | Would monitor a rebuttal round and keep both Advocates within the debate rules. | Deferred |
 | Agent 4 — Judge | Assesses both Advocate Briefs and the packet, then returns outcome probabilities, a compatible scoreline, and cited reasoning. | Implemented |
 
 Both Advocates are deliberately assigned a side. The Judge makes the final prediction; it is not required to agree with either Advocate and may predict a draw.
@@ -152,8 +152,7 @@ Project terminology is documented in [`CONTEXT.MD`](CONTEXT.MD). Contribution wo
 
 ## Planned direction
 
-- **Rebuttal round:** let the Advocates challenge specific points, ask and answer questions, and choose whether to incorporate those exchanges into their briefs.
-- **Referee:** supervise the rebuttal round and enforce debate boundaries.
+- **Rebuttal round and Referee — deferred:** revisit after reviewing Judge failures, as described in the [scope decision](docs/judge.md#rebuttal-and-referee-scope).
 - **Broader evaluation:** expand beyond the five initial fixtures, with separate development and held-out evaluation fixtures.
 - **Richer evidence:** explore injuries, xG, manager context, and similar-opponent matches in later packet versions.
 

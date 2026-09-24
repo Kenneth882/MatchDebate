@@ -4,6 +4,20 @@ The Judge evaluates the two opening Advocate Briefs against their shared Match
 Packet. It replaces the manual pick. The first slice uses the five existing Lab
 Fixtures; referee and rebuttal behavior are not part of this slice.
 
+## Rebuttal and Referee scope
+
+Rebuttals and the Referee are deferred, with no commitment to implement them.
+First evaluate the opening-brief workflow and review Judge reasoning. Revisit
+these extensions if review identifies recurring Judge Reasoning Failures that
+direct challenges between Advocates could plausibly address: accepting
+unsupported Advocate claims, overlooking conflicting Match Packet evidence,
+or mishandling disagreements between the briefs.
+
+A wrong predicted outcome alone does not establish a Judge Reasoning Failure.
+Track forecasting performance separately through Brier loss and the other
+evaluation metrics. Finding a recurring reasoning problem warrants considering
+rebuttals; it does not commit the project to implementing them.
+
 ## Run from the repository root
 
 Use the existing virtual environment, or install the project and development

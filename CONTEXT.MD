@@ -32,6 +32,10 @@ _Avoid_: verdict on which advocate argued best
 The unnormalized three-outcome Brier loss of a recorded Judge Prediction against the revealed result: the sum of squared errors for the home-win, draw, and away-win probabilities, with equal weight for each outcome. Lower is better (0 to 2 per prediction); comparisons use mean loss across valid evaluated fixtures, with selected-outcome accuracy, exact-score accuracy, draw frequency, draw accuracy, and invalid-run counts reported separately.
 _Avoid_: training reward
 
+**Judge Reasoning Failure**:
+A flaw in how the Judge assesses the Advocate Briefs against the Match Packet, such as accepting an unsupported claim, overlooking conflicting evidence, or mishandling a disagreement. A wrong predicted outcome alone does not establish a reasoning failure.
+_Avoid_: any incorrect prediction
+
 **Lab Run**:
 A preserved attempt to predict one Lab Fixture, with its Match Packet, both Advocate Briefs, Judge version, and prediction or failure. Judge versions can be compared using the same saved packet and briefs across separate Lab Runs.
 _Avoid_: overwrite of a fixture's previous prediction
